@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ilmainen harjoituskoe – YKI Suomi B1/B2 | YkiFinnish.fi</title>
+  <meta name="description" content="Testaa suomen kielen taitosi ilmaiseksi YKI-kokeen luetun ja kuullun ymmärtämisen tehtävillä. Tulos heti – ei rekisteröitymistä.">
+  <link rel="canonical" href="https://ykifinnish.fi/ilmainen-testi/">
+  <meta property="og:title" content="Ilmainen harjoituskoe – YKI Suomi B1/B2 | YkiFinnish.fi">
+  <meta property="og:description" content="Testaa suomen kielen taitosi ilmaiseksi YKI-kokeen luetun ja kuullun ymmärtämisen tehtävillä.">
+  <meta property="og:url" content="https://ykifinnish.fi/ilmainen-testi/">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/newhome.css">
+
+  <style>
+    .ft-wrap {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1rem 4rem;
+    }
+    .ft-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      padding: 2.5rem 2rem;
+    }
+    /* Progress */
+    .ft-progress-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      margin-bottom: .5rem;
+      overflow: hidden;
+    }
+    .ft-progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width .3s ease;
+      width: 0%;
+    }
+    .ft-progress-text {
+      font-size: .8rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    /* Section badge */
+    .ft-section-badge {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .ft-section-badge.reading   { background: #ede9fe; color: #6d28d9; }
+    .ft-section-badge.listening { background: #ecfdf5; color: #065f46; }
+    /* Question section */
+    .ft-question-section        { display: none; }
+    .ft-question-section.active { display: block; }
+    /* Passage */
+    .ft-passage {
+      background: #f8fafc;
+      border-left: 3px solid #6d28d9;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: .92rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      color: #374151;
+    }
+    /* Audio */
+    .ft-audio-block {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: .9rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .ft-audio-icon { font-size: 1.4rem; padding-top: .1rem; }
+    .ft-audio-block audio { width: 100%; margin-bottom: .4rem; }
+    .ft-audio-note { font-size: .78rem; color: #065f46; }
+    /* Prompt */
+    .ft-prompt {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    /* Options */
+    .ft-options { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 2rem; }
+    .ft-option {
+      text-align: left;
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      font-size: .93rem;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .ft-option:hover    { border-color: #a78bfa; background: #faf5ff; }
+    .ft-option.selected { border-color: #7c3aed; background: #f3e8ff; font-weight: 600; }
+    /* Nav */
+    .ft-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+    .ft-btn { padding: .65rem 1.4rem; border-radius: 8px; font-size: .9rem; font-weight: 600; cursor: pointer; border: none; }
+    .ft-btn:disabled { opacity: .4; cursor: default; }
+    .ft-btn-primary   { background: #7c3aed; color: #fff; }
+    .ft-btn-primary:hover:not(:disabled) { background: #6d28d9; }
+    .ft-btn-secondary { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .ft-btn-secondary:hover { background: #e5e7eb; }
+    /* Welcome */
+    .ft-welcome h1 { font-size: 1.6rem; margin-bottom: .5rem; }
+    .ft-sub { color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6; }
+    .ft-info-box { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 1.5rem; }
+    .ft-info-box h3 { margin: 0 0 .6rem; font-size: .95rem; }
+    .ft-info-box ul { margin: 0; padding-left: 1.2rem; }
+    .ft-info-box li { font-size: .88rem; color: #374151; margin-bottom: .3rem; }
+    /* Results */
+    .ft-results        { display: none; text-align: center; }
+    .ft-results.active { display: block; }
+    .ft-score-ring {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: conic-gradient(#7c3aed var(--score-pct, 0%), #e5e7eb 0%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 1.5rem auto;
+      font-size: 1.5rem; font-weight: 700; color: #111827;
+    }
+    .ft-score-msg  { color: #374151; margin-bottom: 1.5rem; }
+    .ft-breakdown  { text-align: left; background: #f9fafb; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+    .ft-breakdown h3 { font-size: .9rem; margin: 0 0 .8rem; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; }
+    .ft-breakdown-item { display: flex; justify-content: space-between; padding: .4rem 0; border-bottom: 1px solid #e5e7eb; font-size: .9rem; }
+    .ft-breakdown-item:last-child { border-bottom: none; }
+    .ft-cta-box { background: #1e1b4b; border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 1.2rem; text-align: left; color: #fff; }
+    .ft-cta-box h3 { color: #fff; margin: 0 0 .8rem; }
+    .ft-cta-box ul  { padding-left: 1.2rem; margin: 0 0 1rem; }
+    .ft-cta-box li  { font-size: .87rem; color: #c7d2fe; margin-bottom: .3rem; }
+    .ft-btn-white { display: inline-block; background: #fff; color: #1e1b4b; padding: .65rem 1.4rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: .9rem; }
+    .ft-btn-white:hover { background: #e0e7ff; }
+    .ft-restart-btn { margin-top: .5rem; }
+    /* Finnish flag progress bar */
+    #ft-progress-fill {
+      background: linear-gradient(
+        to right,
+        #003580 0%,
+        #003580 70%,
+        #ffffff 70%,
+        #ffffff 100%
+      ) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="cl-header">
+  <div class="cl-header-inner">
+    <a href="/" class="cl-logo">
+      <img src="/assets/images/fi.svg" alt="FI" />
+      <span>YkiFinnish.fi</span>
+    </a>
+    <nav class="cl-nav">
+      <a href="/ilmainen-testi/" class="active">Ilmainen testi</a>
+      <a href="/artikkelit/">Artikkelit</a>
+      <a href="/yhteystiedot/">Yhteystiedot</a>
+      <a href="https://civiclearn.com/ykifinnish/login">Kirjaudu sisään</a>
+    </nav>
+    <div class="cl-right">
+      <div class="cl-powered">powered by <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/ykifinnish/checkout" class="cl-btn">Täysi pääsy</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- TEST WRAPPER -->
+<div class="ft-wrap">
+  <div class="ft-card">
+
+    <!-- ==================== WELCOME ==================== -->
+    <div id="ft-welcome" class="ft-welcome">
+      <h1>Ilmainen YKI-harjoituskoe</h1>
+      <p class="ft-sub">
+        Testaa suomen kielen taitosi YKI-tason kysymyksillä (B1/B2).<br>
+        Luetun ymmärtäminen ja kuullun ymmärtäminen – aivan kuten oikeassa kokeessa.
+      </p>
+
+      <div class="ft-info-box">
+        <h3>Mitä testi sisältää?</h3>
+        <ul>
+          <li>20 luetun ymmärtämisen kysymystä (5 tekstiä)</li>
+          <li>12 kuullun ymmärtämisen kysymystä (5 äänite)</li>
+          <li>Automaattinen tarkistus ja tulos heti</li>
+          <li>Ei rekisteröitymistä tarvita</li>
+          <li>Kesto noin 30 minuuttia</li>
+        </ul>
+      </div>
+
+      <button class="ft-btn ft-btn-primary" onclick="startTest()">Aloita testi</button>
+    </div>
+
+
+    <!-- ==================== TEST ==================== -->
+    <div id="ft-test" style="display:none;">
+      <div class="ft-progress-bar">
+        <div id="ft-progress-fill" class="ft-progress-fill"></div>
+      </div>
+      <div id="ft-progress-text" class="ft-progress-text">Kysymys 1 / 32</div>
+
+      <div id="ft-questions-container"></div>
+
+      <div class="ft-nav">
+        <button id="ft-prev-btn" class="ft-btn ft-btn-secondary" onclick="prevQuestion()" style="display:none;">← Edellinen</button>
+        <button id="ft-next-btn" class="ft-btn ft-btn-primary"   onclick="nextQuestion()" disabled>Seuraava →</button>
+        <button id="ft-submit-btn" class="ft-btn ft-btn-primary" onclick="submitTest()" style="display:none;" disabled>Katso tulokset</button>
+      </div>
+    </div>
+
+
+    <!-- ==================== RESULTS ==================== -->
+    <div id="ft-results" class="ft-results">
+      <h2>Testi suoritettu!</h2>
+      <div class="ft-score-ring" id="ft-score-ring">
+        <span id="ft-final-score">0%</span>
+      </div>
+      <p id="ft-score-msg" class="ft-score-msg"></p>
+
+      <div class="ft-breakdown">
+        <h3>Tulokset osa-alueittain</h3>
+        <div class="ft-breakdown-item">
+          <span>Luetun ymmärtäminen</span>
+          <strong id="ft-reading-score">0/20</strong>
+        </div>
+        <div class="ft-breakdown-item">
+          <span>Kuullun ymmärtäminen</span>
+          <strong id="ft-listening-score">0/12</strong>
+        </div>
+        <div class="ft-breakdown-item">
+          <span>Yhteensä</span>
+          <strong id="ft-total-score">0/32</strong>
+        </div>
+      </div>
+
+      <div class="ft-cta-box">
+        <h3>Valmis täysimittaiseen harjoitteluun?</h3>
+        <ul>
+          <li>20 täydellistä YKI-simulaatiota (B1/B2)</li>
+          <li>Luetun, kuullun ymmärtäminen ja kirjallinen tuottaminen</li>
+          <li>AI-arviointi kirjoitustehtävistä yksityiskohtaisella palautteella</li>
+          <li>Yksityiskohtaiset tilastot ja edistymisyhteenveto</li>
+          <li>Toimii kaikilla laitteilla – puhelin, tabletti ja tietokone</li>
+        </ul>
+        <a href="https://civiclearn.com/ykifinnish/checkout" class="ft-btn-white">Hanki täysi pääsy</a>
+      </div>
+
+      <button class="ft-btn ft-btn-secondary ft-restart-btn" onclick="restartTest()">Tee testi uudelleen</button>
+    </div>
+
+  </div><!-- /.ft-card -->
+</div><!-- /.ft-wrap -->
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="footer-year"></span> YkiFinnish.fi — osa CivicLearn-verkostoa.</div>
+    <div class="footer-links">
+      <a href="/ilmainen-testi/">Ilmainen testi</a>
+      <a href="/artikkelit/">Artikkelit</a>
+      <a href="/yhteystiedot/">Yhteystiedot</a>
+      <a href="/tietosuojakaytanto/">Tietosuojakäytäntö</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ================================================================
+// TEST DATA — YKI-14 reading + free-test listening
+// Reading : 5 passages × 4 questions = 20
+// Listening: 5 audio tasks × 2-3 questions = 12
+// Total: 32
+// ================================================================
+const PASSAGES = {
+  task_1: "Fazer on ollut Suomen makea sydän jo vuodesta 1891. Karl Fazer pisti tuulemaan ja loi suklaata, joka vei kielen mennessään—bisnes kasvoi kuin pullataikina. Firma otti niskalenkin markkinoista ja laajeni leipään ja karkkeihin, heittäen löylyä kilpailuun. Nykyään Fazer pitää lippunsa korkealla ja vie suklaata maailmalle—vienti tuo kassaan miljoonia. Jotkut sanovat, että Fazer on lyönyt kultasuoneen, mutta haasteita on riittänyt—sota-ajat ja raaka-aineiden puute koettelivat. Toiset pelkäävät, että halpamuoti vie asiakkaat, mutta Fazer ei anna periksi. Perintö elää, ja maku kantaa yhä.",
+  task_2: "Talvisodan henki – Yhtenäisyyttä vai tarua?\n\nTalvisota syttyi 30. marraskuuta 1939, kun Neuvostoliitto hyökkäsi Suomeen. Suomalaiset olivat alivoimaisia niin sotilaiden määrässä kuin aseistuksessa, mutta he puolustivat maataan sitkeästi. Tämän sodan aikana syntyi käsite \\\\\"Talvisodan henki\\\\\", joka viittaa suomalaisten yhteisöllisyyteen, periksiantamattomuuteen ja taistelutahdon voimaan.\n\nTalvisodan hengellä tarkoitetaan usein sitä, miten eri yhteiskuntaluokat ja poliittiset ryhmät unohtivat erimielisyytensä ja yhdistyivät yhteisen tavoitteen, maan puolustamisen, taakse. Ennen sotaa Suomessa oli ollut poliittisia ristiriitoja sisällissodan jäljiltä, mutta Neuvostoliiton hyökkäys sai kansan toimimaan yhtenäisesti.\n\nHistoriantutkijat kuitenkin pohtivat, oliko Talvisodan henki todellista vai osittain jälkikäteen luotu myytti. Vaikka yhtenäisyys oli voimakasta, sota toi myös esiin ristiriitoja, kuten suomalaisten sotavankien kohtelun ja poliittisten johtajien keskinäiset kiistat. Kuitenkin, riippumatta siitä, missä määrin ilmiö oli todellinen tai myyttinen, Talvisodan henki on jäänyt elämään osana suomalaista identiteettiä ja kansallista kertomusta.",
+  task_3: "Suomessa vanhustenhoito on ottanut askelia eteenpäin uusilla ideoilla. Robotit ja teknologia pistävät tuulemaan—ne auttavat syömisessä ja liikkumisessa, jotta vanhukset pysyvät pinnalla. Jotkut kehuvat, että tämä kantaa hedelmää, kun hoitajat saavat hengähtää ja vanhukset elävät pidempään. Toiset pelkäävät, että ihmisen kosketus jää varjoon ja hoito menee pipariksi. Kunnat pitävät narut käsissä ja laittavat rahaa peliin, mutta budjetit ovat tiukilla. Silti moni uskoo, että teknologia on vanhusten pelastus—se voi pitää heidät kotona kauemmin. Haasteita riittää, mutta toivo elää, että hoito pysyy kasassa.",
+  task_4: "Suomen jazz on viime aikoina heittänyt löylyä musiikkimaailmaan. Nuoret soittajat, kuten Verneri Pohjola, ottavat siivet alleen ja sekoittavat perinteitä uusiin säveliin. Klubit käyvät kuumana, ja festivaalit vetävät porukkaa kuin magneetti. Jotkut sanovat, että jazz pitää lippunsa korkealla ja tuo eloa kulttuuriin, mutta toiset pelkäävät, että se menee överiksi ja hukkaa juurensa. Soittajat pitävät narut käsissä ja improvisoivat rohkeasti—se kantaa hedelmää palkintojen muodossa. Silti ala on tiukilla—rahat ovat kortilla, ja yleisö voi heittää pyyhkeen kehään. Jazz elää kuitenkin intohimolla.",
+  task_5: "Oulun teknologiakeskittymä – Menestyksen taustalla rohkea kehitys\n\nOulu tunnetaan yhtenä Suomen johtavista teknologiakeskittymistä. Kaupungissa toimii useita korkean teknologian yrityksiä, erityisesti langattoman viestinnän ja terveysteknologian alalla. Oulun yliopisto ja VTT ovat olleet keskeisiä toimijoita kaupungin kehityksessä, tuottaen osaajia ja tutkimusta, joka on edistänyt alueen kasvua.\n\nOulun teknologiakeskittymä sai alkunsa jo 1970-luvulla, kun kaupungissa alettiin kehittää matkapuhelinteknologiaa. Nokia perusti alueelle suuria tutkimusyksiköitä, ja vaikka yritys on sittemmin supistanut toimintaansa, Oulusta on kasvanut merkittävä teknologiakaupunki. Nykyään alueella toimii satoja teknologiayrityksiä, jotka kehittävät muun muassa 6G-verkkoja ja älylaitteita.\n\nMenestyksen taustalla on vahva yhteistyö yliopistojen, yritysten ja julkisen sektorin välillä. Kaupunki panostaa innovaatioihin ja houkuttelee kansainvälisiä osaajia. Tulevaisuudessa Oulu pyrkii vahvistamaan asemaansa erityisesti terveysteknologian ja tekoälyn saralla, mikä voi tehdä kaupungista entistä merkittävämmän toimijan globaaleilla markkinoilla.",
+};
+
+const TEST_QUESTIONS = [
+
+  // ── TASK-1 (Fazer on ollut Suomen makea sydän jo vuodesta 1891) ──
+  {
+    id: "r_task_1_Q591",
+    section: "reading",
+    passageKey: "task_1",
+    showPassage: true,
+    prompt: "Miten Fazer alkoi Suomessa?",
+    options: [
+      { id: "oa", text: "Makeus lensi siivillä" },
+      { id: "ob", text: "Leipä nousi pinnalle" },
+      { id: "oc", text: "Kilpailu hiljeni" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_1_Q592",
+    section: "reading",
+    passageKey: "task_1",
+    showPassage: false,
+    prompt: "Mitä Fazer on vienyt markkinoille?",
+    options: [
+      { id: "oa", text: "Leivonnaiset ja namit kukoistavat" },
+      { id: "ob", text: "Suklaa jäi varjoon" },
+      { id: "oc", text: "Vienti tyrehtyi" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_1_Q593",
+    section: "reading",
+    passageKey: "task_1",
+    showPassage: false,
+    prompt: "Mikä on ollut Fazer\\'s haaste?",
+    options: [
+      { id: "oa", text: "Aineet ovat olleet kortilla" },
+      { id: "ob", text: "Maailma hylkäsi" },
+      { id: "oc", text: "Kassat tyhjenevät" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_1_Q594",
+    section: "reading",
+    passageKey: "task_1",
+    showPassage: false,
+    prompt: "Miten Fazer vastaa kilpailuun?",
+    options: [
+      { id: "oa", text: "Pitää pään pystyssä" },
+      { id: "ob", text: "Heittää pyyhkeen kehään" },
+      { id: "oc", text: "Lopettaa suklaan" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-2 (Talvisodan henki – Yhtenäisyyttä vai tarua?) ──
+  {
+    id: "r_task_2_Q595",
+    section: "reading",
+    passageKey: "task_2",
+    showPassage: true,
+    prompt: "Mitä Talvisodan hengellä tarkoitetaan?",
+    options: [
+      { id: "oa", text: "Suomalaisen yhteisöllisyyden ja periksiantamattomuuden henkeä sodan aikana" },
+      { id: "ob", text: "Erityistä sotataktiikkaa, jota suomalaiset käyttivät sodassa" },
+      { id: "oc", text: "Taikauskoista uskomusta, jonka mukaan Suomi voitti yliluonnollisella voimalla" },
+      { id: "od", text: "Yksittäisen kenraalin kehittämää strategiaa" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_2_Q596",
+    section: "reading",
+    passageKey: "task_2",
+    showPassage: false,
+    prompt: "Miksi Talvisodan henkeä pidetään tärkeänä osana Suomen historiaa?",
+    options: [
+      { id: "oa", text: "Koska se yhdisti kansaa ja vahvisti kansallista identiteettiä" },
+      { id: "ob", text: "Koska se johti Neuvostoliiton lopulliseen tappioon" },
+      { id: "oc", text: "Koska se mahdollisti Suomen liittymisen Euroopan unioniin" },
+      { id: "od", text: "Koska se teki Suomesta maailman vahvimman sotilasmahdin" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_2_Q597",
+    section: "reading",
+    passageKey: "task_2",
+    showPassage: false,
+    prompt: "Mikä on yksi syy siihen, miksi historioitsijat kyseenalaistavat Talvisodan hengen?",
+    options: [
+      { id: "oa", text: "Koska sodan aikana oli myös ristiriitoja ja erimielisyyksiä" },
+      { id: "ob", text: "Koska Talvisotaa ei koskaan tapahtunut" },
+      { id: "oc", text: "Koska Suomen kansa oli täysin erimielinen sodan alkaessa" },
+      { id: "od", text: "Koska kaikki suomalaiset olivat täysin yksimielisiä sodan aikana" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_2_Q598",
+    section: "reading",
+    passageKey: "task_2",
+    showPassage: false,
+    prompt: "Miten Talvisodan henki näkyy nykypäivän Suomessa?",
+    options: [
+      { id: "oa", text: "Se on osa suomalaista identiteettiä ja kansallista kertomusta" },
+      { id: "ob", text: "Se vaikuttaa edelleen Suomen sotilastaktiikoihin" },
+      { id: "oc", text: "Se ohjaa nykyisiä poliittisia päätöksiä" },
+      { id: "od", text: "Se on unohdettu täysin suomalaisessa historiankirjoituksessa" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-3 (Suomessa vanhustenhoito on ottanut askelia eteenpä) ──
+  {
+    id: "r_task_3_Q599",
+    section: "reading",
+    passageKey: "task_3",
+    showPassage: true,
+    prompt: "Miten vanhustenhoito on muuttunut Suomessa?",
+    options: [
+      { id: "oa", text: "Koneet ottavat ohjat käteen" },
+      { id: "ob", text: "Hoitajat hiljenevät" },
+      { id: "oc", text: "Kotona asuminen loppuu" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_3_Q600",
+    section: "reading",
+    passageKey: "task_3",
+    showPassage: false,
+    prompt: "Mikä on uusien ideoiden hyöty?",
+    options: [
+      { id: "oa", text: "Elämä kantaa pidemmälle" },
+      { id: "ob", text: "Hoitajat katoavat" },
+      { id: "oc", text: "Kustannukset laskevat" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_3_Q601",
+    section: "reading",
+    passageKey: "task_3",
+    showPassage: false,
+    prompt: "Mikä huolettaa joitakin teknologiasta?",
+    options: [
+      { id: "oa", text: "Lämpö voi kadota käsistä" },
+      { id: "ob", text: "Robotit hiljenevät" },
+      { id: "oc", text: "Hoito paranee liikaa" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_3_Q602",
+    section: "reading",
+    passageKey: "task_3",
+    showPassage: false,
+    prompt: "Miten kunnat tukevat uudistuksia?",
+    options: [
+      { id: "oa", text: "Heittävät rahaa laariin" },
+      { id: "ob", text: "Lopettavat robotit" },
+      { id: "oc", text: "Pienentävät koteja" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-4 (Suomen jazz on viime aikoina heittänyt löylyä musi) ──
+  {
+    id: "r_task_4_Q603",
+    section: "reading",
+    passageKey: "task_4",
+    showPassage: true,
+    prompt: "Miten jazz on muuttunut Suomessa?",
+    options: [
+      { id: "oa", text: "Se on saanut uutta kipinää" },
+      { id: "ob", text: "Se hiljentää klubeja" },
+      { id: "oc", text: "Se katoaa varjoihin" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_4_Q604",
+    section: "reading",
+    passageKey: "task_4",
+    showPassage: false,
+    prompt: "Kuka vie jazzia eteenpäin?",
+    options: [
+      { id: "oa", text: "Nuoret puhaltavat henkeä" },
+      { id: "ob", text: "Klubien omistajat" },
+      { id: "oc", text: "Perinteet palaavat" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_4_Q605",
+    section: "reading",
+    passageKey: "task_4",
+    showPassage: false,
+    prompt: "Mikä on jazzin haaste?",
+    options: [
+      { id: "oa", text: "Kassa voi jäädä tyhjäksi" },
+      { id: "ob", text: "Festivaalit loppuvat" },
+      { id: "oc", text: "Soittimet hajoavat" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_4_Q606",
+    section: "reading",
+    passageKey: "task_4",
+    showPassage: false,
+    prompt: "Miten jazz selviää?",
+    options: [
+      { id: "oa", text: "Intohimo kantaa siivillä" },
+      { id: "ob", text: "Rahat tippuvat taivaasta" },
+      { id: "oc", text: "Klubit sulkeutuvat" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-5 (Oulun teknologiakeskittymä – Menestyksen taustalla) ──
+  {
+    id: "r_task_5_Q607",
+    section: "reading",
+    passageKey: "task_5",
+    showPassage: true,
+    prompt: "Miten Oulu ansaitsi maineensa teknologiakeskittymänä?",
+    options: [
+      { id: "oa", text: "Langattoman viestinnän ja terveysteknologian kehityksen ansiosta" },
+      { id: "ob", text: "Suurten kaivosteollisuusprojektien kautta" },
+      { id: "oc", text: "Maanviljelysinnovaatioiden avulla" },
+      { id: "od", text: "Rakentamalla Pohjoismaiden korkeimman pilvenpiirtäjän" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_5_Q608",
+    section: "reading",
+    passageKey: "task_5",
+    showPassage: false,
+    prompt: "Mikä vaikutti eniten Oulun teknologiakeskittymän syntyyn?",
+    options: [
+      { id: "oa", text: "Nokian tutkimusyksiköiden perustaminen 1970-luvulla" },
+      { id: "ob", text: "Kaupungin perinteinen tekstiiliteollisuus" },
+      { id: "oc", text: "Alueen luonnonvarojen hyödyntäminen" },
+      { id: "od", text: "Matkailun kasvu Oulussa" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_5_Q609",
+    section: "reading",
+    passageKey: "task_5",
+    showPassage: false,
+    prompt: "Mitä Oulun teknologiakeskittymä kehittää nykyään?",
+    options: [
+      { id: "oa", text: "6G-verkkoja ja älylaitteita" },
+      { id: "ob", text: "Perinteisiä analogisia radioita" },
+      { id: "oc", text: "Laivanrakennusta" },
+      { id: "od", text: "Rautatiekalustoa" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "r_task_5_Q610",
+    section: "reading",
+    passageKey: "task_5",
+    showPassage: false,
+    prompt: "Mikä on yksi Oulun teknologiakeskittymän tulevaisuuden tavoite?",
+    options: [
+      { id: "oa", text: "Kehittää terveysteknologiaa ja tekoälyä" },
+      { id: "ob", text: "Rakentaa Suomen suurin ostoskeskus" },
+      { id: "oc", text: "Laajentaa kaupungin kaivostoimintaa" },
+      { id: "od", text: "Sulkea kaikki tutkimusyksiköt ja siirtää toiminta Helsinkiin" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-1 (SubBlock_Huomio-matkustajat-Bussi-Turk.mp3) ──
+  {
+    id: "l_task_1_Q1",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: "/assets/audio/SubBlock_Huomio-matkustajat-Bussi-Turk.mp3",
+    audioNote: "Kuuntele äänite ja vastaa. Voit kuunnella useita kertoja.",
+    showAudio: true,
+    prompt: "Mihin aikaan bussi Turkuun lähtee?",
+    options: [
+      { id: "oa", text: "Puoli viideltä" },
+      { id: "ob", text: "Neljältä" },
+      { id: "oc", text: "Viideltä" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_1_Q2",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Mistä laiturista bussi lähtee?",
+    options: [
+      { id: "oa", text: "Kolmoselta" },
+      { id: "ob", text: "Kakkoselta" },
+      { id: "oc", text: "Neloselta" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_1_Q3",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Miksi bussi on myöhässä?",
+    options: [
+      { id: "oa", text: "Liikenteen takia" },
+      { id: "ob", text: "Sään takia" },
+      { id: "oc", text: "Kuljettajan takia" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-2 (Finland.mp3) ──
+  {
+    id: "l_task_2_Q4",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: "/assets/audio/Finland.mp3",
+    audioNote: "Kuuntele äänite ja vastaa. Voit kuunnella useita kertoja.",
+    showAudio: true,
+    prompt: "Mihin aikaan ystävät tapaavat?",
+    options: [
+      { id: "oa", text: "Puoli yhdeltätoista" },
+      { id: "ob", text: "Kymmeneltä" },
+      { id: "oc", text: "Yhdeltätoista" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_2_Q5",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Missä he tapaavat?",
+    options: [
+      { id: "oa", text: "Järven rannalla" },
+      { id: "ob", text: "Metsässä" },
+      { id: "oc", text: "Kahvilassa" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_2_Q6",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Kuka tuo eväät?",
+    options: [
+      { id: "oa", text: "Mies" },
+      { id: "ob", text: "Nainen" },
+      { id: "oc", text: "Molemmat" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-3 (weather1.mp3) ──
+  {
+    id: "l_task_3_Q7",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: "/assets/audio/weather1.mp3",
+    audioNote: "Kuuntele äänite ja vastaa. Voit kuunnella useita kertoja.",
+    showAudio: true,
+    prompt: "Milloin sade alkaa huomenna?",
+    options: [
+      { id: "oa", text: "Noin kolmelta" },
+      { id: "ob", text: "Aamulla" },
+      { id: "oc", text: "Illalla" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_3_Q8",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Kuinka lämmintä huomenna on?",
+    options: [
+      { id: "oa", text: "Kymmenen astetta" },
+      { id: "ob", text: "Viisi astetta" },
+      { id: "oc", text: "Viisitoista astetta" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-4 (Finland-1.mp3) ──
+  {
+    id: "l_task_4_Q9",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: "/assets/audio/Finland-1.mp3",
+    audioNote: "Kuuntele äänite ja vastaa. Voit kuunnella useita kertoja.",
+    showAudio: true,
+    prompt: "Mitä nainen tilasi alun perin?",
+    options: [
+      { id: "oa", text: "Kahvin ja pullan" },
+      { id: "ob", text: "Teen ja pullan" },
+      { id: "oc", text: "Kahvin ja kakun" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_4_Q10",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Miten nainen haluaa kahvinsa?",
+    options: [
+      { id: "oa", text: "Maidolla" },
+      { id: "ob", text: "Ilman maitoa" },
+      { id: "oc", text: "Sokerilla" },
+    ],
+    correct: "oa"
+  },
+
+  // ── TASK-5 (Finland-3.mp3) ──
+  {
+    id: "l_task_5_Q11",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: "/assets/audio/Finland-3.mp3",
+    audioNote: "Kuuntele äänite ja vastaa. Voit kuunnella useita kertoja.",
+    showAudio: true,
+    prompt: "Mihin mennessä raportti pitää olla valmis?",
+    options: [
+      { id: "oa", text: "Kahteen mennessä" },
+      { id: "ob", text: "Aamulla" },
+      { id: "oc", text: "Kolmeen mennessä" },
+    ],
+    correct: "oa"
+  },
+
+  {
+    id: "l_task_5_Q12",
+    section: "listening",
+    passageKey: null,
+    showPassage: false,
+    audio: null,
+    showAudio: false,
+    prompt: "Kuka hoitaa raportin?",
+    options: [
+      { id: "oa", text: "Nainen" },
+      { id: "ob", text: "Mies" },
+      { id: "oc", text: "Joku muu" },
+    ],
+    correct: "oa"
+  },
+
+];
+
+// ================================================================
+// STATE
+// ================================================================
+let currentIndex = 0;
+let userAnswers  = {};
+
+const TOTAL_READING   = 20;
+const TOTAL_LISTENING = 12;
+
+// ================================================================
+// START / RESTART
+// ================================================================
+function startTest() {
+  document.getElementById("ft-welcome").style.display = "none";
+  document.getElementById("ft-test").style.display    = "block";
+  renderQuestions();
+  showQuestion(0);
+}
+
+function restartTest() {
+  currentIndex = 0;
+  userAnswers  = {};
+  document.getElementById("ft-results").classList.remove("active");
+  document.getElementById("ft-test").style.display    = "none";
+  document.getElementById("ft-welcome").style.display = "block";
+  document.getElementById("ft-questions-container").innerHTML = "";
+}
+
+// ================================================================
+// RENDER
+// ================================================================
+function renderQuestions() {
+  var container = document.getElementById("ft-questions-container");
+  container.innerHTML = "";
+
+  TEST_QUESTIONS.forEach(function(q, idx) {
+    var sec = document.createElement("div");
+    sec.className = "ft-question-section";
+    sec.id = "ft-q-" + idx;
+
+    var html = "";
+
+    // Section badge
+    if (q.section === "reading") {
+      html += '<span class="ft-section-badge reading">Luetun ymmärtäminen</span>';
+    } else {
+      html += '<span class="ft-section-badge listening">Kuullun ymmärtäminen</span>';
+    }
+
+    // Passage
+    if (q.showPassage && q.passageKey && PASSAGES[q.passageKey]) {
+      html += '<div class="ft-passage">' + escapeHtml(PASSAGES[q.passageKey]) + '</div>';
+    }
+
+    // Audio block — show on first question of each audio task
+    if (q.audio && q.showAudio) {
+      html += '<div class="ft-audio-block">';
+      html += '<span class="ft-audio-icon">🔊</span>';
+      html += '<div style="flex:1;min-width:0;">';
+      html += '<audio controls preload="none" style="width:100%;">';
+      html += '<source src="' + q.audio + '" type="audio/mpeg">';
+      html += 'Selaimesi ei tue äänentoistoa.';
+      html += '</audio>';
+      if (q.audioNote) {
+        html += '<div class="ft-audio-note">' + q.audioNote + '</div>';
+      }
+      html += '</div>';
+      html += '</div>';
+    } else if (q.section === "listening" && !q.audio && !q.showAudio) {
+      // Subsequent questions in same audio task — remind to re-listen
+      html += '<div class="ft-audio-note" style="margin-bottom:1rem;color:#065f46;">↑ Käytä yllä olevaa äänitettä vastataksesi tähän kysymykseen.</div>';
+    }
+
+    // Prompt
+    html += '<div class="ft-prompt">' + q.prompt + '</div>';
+
+    // Options
+    html += '<div class="ft-options">';
+    q.options.forEach(function(opt) {
+      html += '<button class="ft-option"'
+            + ' data-qid="' + q.id + '"'
+            + ' data-oid="' + opt.id + '"'
+            + ' onclick="selectOption(\'' + q.id + '\',\'' + opt.id + '\',this)">'
+            + escapeHtml(opt.text)
+            + '</button>';
+    });
+    html += '</div>';
+
+    sec.innerHTML = html;
+    container.appendChild(sec);
+  });
+}
+
+// ================================================================
+// NAVIGATION
+// ================================================================
+function showQuestion(idx) {
+  document.querySelectorAll(".ft-question-section").forEach(function(el) {
+    el.classList.remove("active");
+  });
+  document.getElementById("ft-q-" + idx).classList.add("active");
+  currentIndex = idx;
+  updateProgress();
+  updateNavButtons();
+
+  // Restore previous answer highlight
+  var q = TEST_QUESTIONS[idx];
+  if (userAnswers[q.id]) {
+    var prev = document.querySelector(
+      '[data-qid="' + q.id + '"][data-oid="' + userAnswers[q.id] + '"]'
+    );
+    if (prev) prev.classList.add("selected");
+  }
+}
+
+function nextQuestion() {
+  if (currentIndex < TEST_QUESTIONS.length - 1) showQuestion(currentIndex + 1);
+}
+function prevQuestion() {
+  if (currentIndex > 0) showQuestion(currentIndex - 1);
+}
+
+// ================================================================
+// OPTION SELECTION
+// ================================================================
+function selectOption(qid, oid, btn) {
+  document.querySelectorAll('[data-qid="' + qid + '"]').forEach(function(el) {
+    el.classList.remove("selected");
+  });
+  btn.classList.add("selected");
+  userAnswers[qid] = oid;
+  document.getElementById("ft-next-btn").disabled = false;
+  if (currentIndex === TEST_QUESTIONS.length - 1) {
+    document.getElementById("ft-submit-btn").disabled = false;
+  }
+}
+
+// ================================================================
+// PROGRESS
+// ================================================================
+function updateProgress() {
+  var total = TEST_QUESTIONS.length;
+  var pct   = ((currentIndex + 1) / total) * 100;
+  document.getElementById("ft-progress-fill").style.width = pct + "%";
+  document.getElementById("ft-progress-text").textContent =
+    "Kysymys " + (currentIndex + 1) + " / " + total;
+}
+
+function updateNavButtons() {
+  var prev   = document.getElementById("ft-prev-btn");
+  var next   = document.getElementById("ft-next-btn");
+  var submit = document.getElementById("ft-submit-btn");
+  var q      = TEST_QUESTIONS[currentIndex];
+  var hasAnswer = !!userAnswers[q.id];
+
+  prev.style.display = currentIndex > 0 ? "block" : "none";
+
+  if (currentIndex === TEST_QUESTIONS.length - 1) {
+    next.style.display   = "none";
+    submit.style.display = "block";
+    submit.disabled      = !hasAnswer;
+  } else {
+    next.style.display   = "block";
+    submit.style.display = "none";
+    next.disabled        = !hasAnswer;
+  }
+}
+
+// ================================================================
+// SUBMIT & SCORE
+// ================================================================
+function submitTest() {
+  var readingCorrect   = 0;
+  var listeningCorrect = 0;
+
+  TEST_QUESTIONS.forEach(function(q) {
+    if (userAnswers[q.id] === q.correct) {
+      if (q.section === "reading")   readingCorrect++;
+      if (q.section === "listening") listeningCorrect++;
+    }
+  });
+
+  var totalCorrect = readingCorrect + listeningCorrect;
+  var totalQ       = TEST_QUESTIONS.length;
+  var pct          = Math.round((totalCorrect / totalQ) * 100);
+
+  document.getElementById("ft-test").style.display = "none";
+  document.getElementById("ft-results").classList.add("active");
+
+  document.getElementById("ft-final-score").textContent     = pct + "%";
+  document.getElementById("ft-reading-score").textContent   = readingCorrect + "/" + TOTAL_READING;
+  document.getElementById("ft-listening-score").textContent = listeningCorrect + "/" + TOTAL_LISTENING;
+  document.getElementById("ft-total-score").textContent     = totalCorrect + "/" + totalQ;
+
+  // Animate score ring
+  document.getElementById("ft-score-ring").style.setProperty("--score-pct", pct + "%");
+
+  var msg = "";
+  if (pct >= 80)      msg = "Erinomainen! Olet hyvin valmistautunut YKI-kokeeseen.";
+  else if (pct >= 60) msg = "Hyvä tulos! Jatka harjoittelua varman tuloksen varmistamiseksi.";
+  else if (pct >= 40) msg = "Olet oikealla tiellä – lisää harjoittelua parantaa tulosta.";
+  else                msg = "Jatka harjoittelua – säännöllinen harjoittelu tuo suuria edistysaskeleita!";
+
+  document.getElementById("ft-score-msg").textContent = msg;
+}
+
+// ================================================================
+// UTILS
+// ================================================================
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
