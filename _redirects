@@ -1,0 +1,24 @@
+# ykifinnish.fi — Redirects for old URLs not on new site
+# Format: old_path new_path status_code
+
+# App pages → civiclearn
+/login/ https://civiclearn.com/ykifinnish/login.html 301
+/register/ https://civiclearn.com/ykifinnish/checkout 301
+
+# Renamed pages
+/free-test/ /ilmainen-testi/ 301
+/blog/ /artikkelit/ 301
+/blog/page/2/ /artikkelit/ 301
+/startpage/ / 301
+/contact-us/ /yhteystiedot/ 301
+/contact-support/ /yhteystiedot/ 301
+
+# Old pages that no longer exist
+/writing-examples/ / 301
+/yki-intermediate-test-prep/ / 301
+
+# Tag/category/author/WordPress → homepage
+/tag/* / 301
+/category/* / 301
+/author/* / 301
+/lexend-footer/* / 301
