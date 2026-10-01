@@ -322,106 +322,44 @@
 
 
 <!-- FEATURES: EXAM COMPONENTS -->
-<section class="features-section">
-
-  <div class="section-heading">
-    <div class="section-kicker">Jäsennelty valmistautuminen</div>
-    <h2 class="section-title">Kaikki mitä tarvitset YKI-kokeen läpäisemiseen</h2>
-    <p class="section-lead">
-      Harjoittele realistisilla simulaatioilla, saa yksityiskohtaista palautetta ja rakenna itseluottamustasi ennen koepäivää.
-    </p>
-  </div>
-
-  <div class="features-grid">
-
-    <!-- CARD 1: About YKI -->
-    <div class="feature-card" onclick="location.href='/om-yki/'">
-      <a href="/tietoa-kokeesta/" class="feature-card-link">
-
-        <div class="feature-icon">
-          <img src="/assets/images/5.svg" alt="YKI-kokeesta">
-        </div>
-
-        <h3 class="feature-title">YKI-kokeesta</h3>
-
-        <p class="feature-text">
-          YKI arvioi neljä taitoa: lukeminen, kuuntelu, kirjoittaminen ja puhuminen. Taso 3 (B1) vaaditaan Suomen kansalaisuuteen.
-        </p>
-
-        <div class="feature-cta">
-          Lue lisää kokeesta <span class="arrow">›</span>
-        </div>
-
-      </a>
+<section class="section feat-v2">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Jäsennelty valmistautuminen</span><h2>Kaikki mitä tarvitset YKI-kokeen läpäisemiseen</h2><p>Harjoittele realistisilla simulaatioilla, saa yksityiskohtaista palautetta ja rakenna itseluottamustasi ennen koepäivää.</p></div>
+    <div class="features">
+      <div class="feature">
+        <img src="/assets/images/5.svg" alt="">
+        <h3>YKI-kokeesta</h3>
+        <p>YKI arvioi neljä taitoa: lukeminen, kuuntelu, kirjoittaminen ja puhuminen. Taso 3 (B1) vaaditaan Suomen kansalaisuuteen.</p>
+        <a class="feat-link" href="/tietoa-kokeesta/">Lue lisää kokeesta ›</a>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/6.svg" alt="">
+        <h3>Ilmainen harjoituskoe</h3>
+        <p>Testaa taitosi ilmaisella kokeella. Katso miten alusta toimii ja arvioi nykyinen tasosi.</p>
+        <a class="feat-link" href="/ilmainen-testi/">Tee ilmainen koe ›</a>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/3.svg" alt="">
+        <h3>Itseluottamusta koepäivään</h3>
+        <p>Harjoittele omaan tahtiisi, saa välitöntä palautetta ja seuraa kehitystäsi. Ole valmis koepäivänä.</p>
+        <a class="feat-link" href="https://civiclearn.com/ykifinnish/checkout">Aloita harjoittelu ›</a>
+      </div>
     </div>
-
-    <!-- CARD 2: Free Test -->
-    <div class="feature-card" onclick="location.href='/ilmainen-testi/'">
-      <a href="/ilmainen-testi/" class="feature-card-link">
-
-        <div class="feature-icon">
-          <img src="/assets/images/6.svg" alt="Ilmainen harjoituskoe">
-        </div>
-
-        <h3 class="feature-title">Ilmainen harjoituskoe</h3>
-
-        <p class="feature-text">
-          Testaa taitosi ilmaisella kokeella. Katso miten alusta toimii ja arvioi nykyinen tasosi.
-        </p>
-
-        <div class="feature-cta">
-          Tee ilmainen koe <span class="arrow">›</span>
-        </div>
-
-      </a>
-    </div>
-
-    <!-- CARD 3: Confidence -->
-    <div class="feature-card" onclick="location.href='https://civiclearn.com/ykifinnish/checkout'">
-      <a href="https://civiclearn.com/ykifinnish/checkout" class="feature-card-link">
-
-        <div class="feature-icon">
-          <img src="/assets/images/3.svg" alt="Självförtroende">
-        </div>
-
-        <h3 class="feature-title">Itseluottamusta koepäivään</h3>
-
-        <p class="feature-text">
-          Harjoittele omaan tahtiisi, saa välitöntä palautetta ja seuraa kehitystäsi. Ole valmis koepäivänä.
-        </p>
-
-        <div class="feature-cta">
-          Aloita harjoittelu <span class="arrow">›</span>
-        </div>
-
-      </a>
-    </div>
-
   </div>
 </section>
 
 <!-- INLINE TEST -->
-<section class="inline-test" id="free-questions">
-  <div class="inline-test-inner">
-
-    <h2 class="inline-test-heading">Testaa tietosi</h2>
-    <p class="inline-test-lead">Kolme nopeaa kysymystä – katso oletko valmis</p>
-
-    <div id="inline-test-questions">
-      <!-- Questions loaded by hometest-ykifinnish.js -->
+<section class="section quiz" id="free-questions">
+  <div class="wrap">
+    <div class="quiz-top">
+      <div class="section-head"><span class="kicker">Ilmainen harjoitus</span><h2>Testaa tietosi</h2><p>Kolme nopeaa kysymystä – katso oletko valmis</p></div>
+      <div class="quiz-actions"><a href="/ilmainen-testi/" class="quiz-more">Lisää harjoituksia →</a><a href="https://civiclearn.com/ykifinnish/checkout" class="btn btn-ghost">Luo tili nyt</a></div>
     </div>
-
-    <div class="inline-progressbar-wrapper">
-      <div class="inline-progressbar" id="inline-progressbar"></div>
+    <div class="progress">
+      <div id="inline-progress-text"></div>
+      <div class="progress-track"><div id="inline-progressbar"></div></div>
     </div>
-
-    <div class="inline-cta-row">
-      <div class="upper-cta-wrapper">
-        <a href="/ilmainen-testi/" class="btn-secondary-cta">Lisää harjoituksia →</a>
-      </div>
-      <a href="https://civiclearn.com/ykifinnish/checkout" class="hero-primary-btn">Luo tili nyt</a>
-    </div>
-
+    <div id="inline-test-questions"></div>
   </div>
 </section>
 
@@ -467,154 +405,31 @@
 
 
 <!-- FAQ -->
-<section class="cl-faq">
-
-  <div class="section-heading">
-    <div class="section-kicker">Usein kysytyt kysymykset</div>
-    <h2 class="section-title">UKK — YKI Suomi</h2>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Onko tämä tilaus?</span>
-    </div>
-    <div class="faq-answer">
-      <p>Ei. Kertamaksu 69 € antaa sinulle rajattoman pääsyn kaikkeen sisältöön ilman tilauksia.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Mikä on YKI-koe?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        YKI (Yleinen kielitutkinto) on yleinen kielikoe tasoilla B1–B2 eurooppalaisen viitekehyksen mukaan.
-        Suomen valtio hyväksyy sen kielitaidon osoituksena Suomen kansalaisuutta varten.
-      </p>
+<section class="section" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="section-head"><span class="kicker">Usein kysytyt kysymykset</span><h2>UKK — YKI Suomi</h2><p>Muita kysymyksiä? <a href="/yhteystiedot/">Kirjoita meille</a>.</p></div>
+    <div class="faq-list">
+      <details><summary>Onko tämä tilaus?</summary><p>Ei. Kertamaksu 69 € antaa sinulle rajattoman pääsyn kaikkeen sisältöön ilman tilauksia.</p></details>
+      <details><summary>Mikä on YKI-koe?</summary><p> YKI (Yleinen kielitutkinto) on yleinen kielikoe tasoilla B1–B2 eurooppalaisen viitekehyksen mukaan. Suomen valtio hyväksyy sen kielitaidon osoituksena Suomen kansalaisuutta varten. </p></details>
+      <details><summary>Onko tämä ilmoittautuminen viralliseen kokeeseen?</summary><p> Ei. Tämä on pelkästään kokeeseen valmistautumisohjelma. Ilmoittautuminen viralliseen kokeeseen tapahtuu suoraan Opetushallituksen tai valtuutetun testipisteen kautta. </p> <p> Harjoitteluohjelmamme ei johda todistukseen — tavoitteena on valmistaa sinut mahdollisimman hyvin oikeaa koetta varten. </p></details>
+      <details><summary>Olen juuri maksanut. Mitä tapahtuu seuraavaksi?</summary><p> Maksun jälkeen sinut ohjataan kirjautumisnäyttöön. Syötä ostossa käyttämäsi sähköpostiosoite: saat yksilöllisen kirjautumiskoodin. Syötä koodi päästäksesi välittömästi omaan henkilökohtaiseen alueeseesi. </p></details>
+      <details><summary>Ovatko kysymyksenne samat kuin virallisessa kokeessa?</summary><p> Kysymyksemme on laadittu YKI-kokeessa arvioitavien taitojen ja formaattien pohjalta Opetushallituksen ohjeiden mukaisesti. </p> <p> Meillä ei ole yhteyttä Opetushallitukseen tai Suomen valtioon. Ohjelmamme on tarkoitettu yksinomaan auttamaan sinua valmistautumaan tehokkaasti. </p></details>
+      <details><summary>Mitä simulaatiot ovat?</summary><p> Simulaatiot jäljittelevät oikean YKI-kokeen rakennetta: ne sisältävät luetun ymmärtämisen ja kirjallisen tuottamisen harjoituksia (kirjallinen osa), kuullun ymmärtämisen ja suullisen tuottamisen sekä vuorovaikutuksen, samalla formaatilla ja painotuksella kuin virallisessa kokeessa. </p> <p> Se on paras tapa tottua todellisiin olosuhteisiin ennen koepäivää. </p></details>
+      <details><summary>Kuinka kauan valmistautuminen kestää?</summary><p> Se riippuu nykyisestä suomen kielen tasostasi. Useimmat käyttäjät suorittavat kaikki simulaatiot ja harjoitukset kahdesta neljään viikossa. Suosittelemme aloittamaan hyvissä ajoin. </p></details>
+      <details><summary>Sisältyykö suullinen tuottaminen harjoitteluun?</summary><p> Kyllä. Virallisessa kokeessa suullinen osa tarkoittaa vuorovaikutusta tutkijan kanssa pareittain. Koska tämä ei ole mahdollista verkkoalustalla, sisällytämme kohdennettuja harjoituksia kuvankuvauksilla ja monologiaiheilla, jotta tutustut formaattiin ja tiedät mitä odottaa. </p></details>
+      <details><summary>Voinko käyttää ohjelmaa puhelimella tai tabletilla?</summary><p>Kyllä. Voit käyttää alustaa miltä tahansa laitteelta, jolla on internetyhteys.</p></details>
     </div>
   </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Onko tämä ilmoittautuminen viralliseen kokeeseen?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Ei. Tämä on pelkästään kokeeseen valmistautumisohjelma.
-        Ilmoittautuminen viralliseen kokeeseen tapahtuu suoraan Opetushallituksen tai valtuutetun testipisteen kautta.
-      </p>
-      <p>
-        Harjoitteluohjelmamme ei johda todistukseen — tavoitteena on valmistaa sinut mahdollisimman hyvin oikeaa koetta varten.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Olen juuri maksanut. Mitä tapahtuu seuraavaksi?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Maksun jälkeen sinut ohjataan kirjautumisnäyttöön. Syötä ostossa käyttämäsi sähköpostiosoite: saat yksilöllisen kirjautumiskoodin.
-        Syötä koodi päästäksesi välittömästi omaan henkilökohtaiseen alueeseesi.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Ovatko kysymyksenne samat kuin virallisessa kokeessa?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Kysymyksemme on laadittu YKI-kokeessa arvioitavien taitojen ja formaattien pohjalta Opetushallituksen ohjeiden mukaisesti.
-      </p>
-      <p>
-        Meillä ei ole yhteyttä Opetushallitukseen tai Suomen valtioon. Ohjelmamme on tarkoitettu yksinomaan auttamaan sinua valmistautumaan tehokkaasti.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Mitä simulaatiot ovat?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Simulaatiot jäljittelevät oikean YKI-kokeen rakennetta: ne sisältävät luetun ymmärtämisen ja kirjallisen tuottamisen harjoituksia (kirjallinen osa), kuullun ymmärtämisen ja suullisen tuottamisen sekä vuorovaikutuksen,
-        samalla formaatilla ja painotuksella kuin virallisessa kokeessa.
-      </p>
-      <p>
-        Se on paras tapa tottua todellisiin olosuhteisiin ennen koepäivää.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Kuinka kauan valmistautuminen kestää?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Se riippuu nykyisestä suomen kielen tasostasi.
-        Useimmat käyttäjät suorittavat kaikki simulaatiot ja harjoitukset kahdesta neljään viikossa.
-        Suosittelemme aloittamaan hyvissä ajoin.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Sisältyykö suullinen tuottaminen harjoitteluun?</span>
-    </div>
-    <div class="faq-answer">
-      <p>
-        Kyllä. Virallisessa kokeessa suullinen osa tarkoittaa vuorovaikutusta tutkijan kanssa pareittain. Koska tämä ei ole mahdollista verkkoalustalla,
-        sisällytämme kohdennettuja harjoituksia kuvankuvauksilla ja monologiaiheilla, jotta tutustut formaattiin ja tiedät mitä odottaa.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Voinko käyttää ohjelmaa puhelimella tai tabletilla?</span>
-    </div>
-    <div class="faq-answer">
-      <p>Kyllä. Voit käyttää alustaa miltä tahansa laitteelta, jolla on internetyhteys.</p>
-    </div>
-  </div>
-
 </section>
 
 
 <!-- FEATURED ARTICLES -->
-<section class="home-articles">
-  <div class="section-heading">
-    <div class="section-kicker">Lisää luettavaa</div>
-    <h2 class="section-title">Artikkeleita YKI-kokeeseen valmistautumiseen</h2>
-    <p class="section-lead">
-      Vinkkejä, strategioita ja taustatietoa kokeen läpäisemiseksi.
-    </p>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Lisää luettavaa</span><h2>Artikkeleita YKI-kokeeseen valmistautumiseen</h2><p>Vinkkejä, strategioita ja taustatietoa kokeen läpäisemiseksi.</p></div>
+    <div class="home-articles-grid" id="homeArticlesGrid"></div>
+    <p class="articles-more"><a href="/artikkelit/">Kaikki artikkelit →</a></p>
   </div>
-
-  <!-- PASSPORT RANKING STRIP — Lisää luettavaa (further-reading pointer → ranking page). Finnish copy: native review recommended. -->
-  <a href="https://civiclearn.com/passport-ranking"
-     style="display:flex;align-items:center;gap:14px;max-width:820px;margin:0 auto 24px;padding:13px 22px;background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;border-radius:12px;text-decoration:none;color:#1d2230;text-align:left;transition:border-color .15s,box-shadow .15s;"
-     onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 4px 16px rgba(124,58,237,.12)'"
-     onmouseout="this.style.borderColor='#e5e1da';this.style.borderLeftColor='#7c3aed';this.style.boxShadow='none'">
-    <span style="flex:0 0 auto;background:#f5f0ff;color:#7c3aed;font-weight:700;font-size:.7rem;letter-spacing:.02em;padding:5px 10px;border-radius:6px;white-space:nowrap;">PASSIVERTAILU</span>
-    <span style="flex:1 1 auto;min-width:0;font-size:.86rem;line-height:1.45;color:#555;text-align:left;">
-      <strong style="color:#1a1a2e;">Suomi on yksi maailman turvallisimmista ja kestävimmistä maista</strong> — katso, mihin sen passi sijoittuu.
-    </span>
-    <span style="flex:0 0 auto;color:#7c3aed;font-weight:600;font-size:.84rem;white-space:nowrap;">Katso sijoitus &rarr;</span>
-  </a>
-
-  <div class="home-articles-grid" id="homeArticlesGrid"></div>
-
-  <p class="home-articles-more">
-    <a href="/artikkelit/">Kaikki artikkelit →</a>
-  </p>
 </section>
 
 
@@ -632,35 +447,36 @@
   </div>
 </section>
 
-<section class="compat-section">
-  <div class="compat-inner">
-
-    <h2 class="compat-title">Yhteensopiva kaikkien laitteiden ja modernien selainten kanssa</h2>
-
-    <div class="compat-grid">
-      <div class="compat-item"><img src="/assets/images/logos/windows.svg"><p>Windows</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/macos.svg"><p>macOS</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/android.svg"><p>Android</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/ios.svg"><p>iPhone / iPad</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/chrome.svg"><p>Chrome</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/safari.svg"><p>Safari</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/firefox.svg"><p>Firefox</p></div>
+<section style="padding:24px 0 0">
+  <div class="wrap">
+    <a class="rank" href="https://civiclearn.com/passport-ranking">
+      <span class="rank-tag">PASSIVERTAILU</span>
+      <span><strong>Suomi on yksi maailman turvallisimmista ja kestävimmistä maista</strong> — katso, mihin sen passi sijoittuu.</span>
+      <span class="rank-go">Katso sijoitus →</span>
+    </a>
+    <div class="devices" aria-label="Yhteensopiva kaikkien laitteiden ja modernien selainten kanssa">
+      <span><img src="/assets/images/logos/windows.svg" alt="">Windows</span>
+      <span><img src="/assets/images/logos/macos.svg" alt="">macOS</span>
+      <span><img src="/assets/images/logos/android.svg" alt="">Android</span>
+      <span><img src="/assets/images/logos/ios.svg" alt="">iPhone / iPad</span>
+      <span><img src="/assets/images/logos/chrome.svg" alt="">Chrome</span>
+      <span><img src="/assets/images/logos/safari.svg" alt="">Safari</span>
+      <span><img src="/assets/images/logos/firefox.svg" alt="">Firefox</span>
     </div>
-
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
+<footer class="foot">
+  <div class="wrap">
     <div>© <span id="footer-year"></span> YkiFinnish.fi — osa CivicLearn-verkostoa.</div>
-    <div class="footer-links">
+    <nav>
       <a href="https://civiclearn.com/insights">Insights</a>
       <a href="/ilmainen-testi/">Ilmainen testi</a>
       <a href="/artikkelit/">Artikkelit</a>
       <a href="/yhteystiedot/">Yhteystiedot</a>
       <a href="/kaytannot/">Käytännöt</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
