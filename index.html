@@ -275,12 +275,12 @@
 <div class="exam-status-row">
 <div class="exam-status-counter" id="status-test-counter">
 <span class="count-number">—</span>
-<span class="count-unit">DAGAR</span>
+<span class="count-unit">PÄIVÄÄ</span>
 </div>
 <div class="exam-status-text">
 <p class="exam-status-sentence" id="status-test-text">
             Seuraava YKI-suomi-koe järjestetään
-            <strong>28. maaliskuuta 2026</strong>.
+            <strong>7. marraskuuta 2026</strong>.
           </p>
 </div>
 </div>
@@ -288,12 +288,12 @@
 <div class="exam-status-row exam-status-row--registration">
 <div class="exam-status-counter" id="status-reg-counter">
 <span class="count-number">—</span>
-<span class="count-unit">DAGAR</span>
+<span class="count-unit">PÄIVÄÄ</span>
 </div>
 <div class="exam-status-text">
 <p class="exam-status-sentence" id="status-reg-text">
             Ilmoittautuminen YKI-kokeeseen päättyy
-            <strong>12. maaliskuuta 2026</strong>.
+            <strong>22. lokakuuta 2026</strong>.
           </p>
 </div>
 </div>
@@ -510,10 +510,16 @@ document.querySelectorAll(".faq-item").forEach(item => {
    ====================================================== -->
 <script>
 
+/* YKI suomi, keskitaso — koko testi (kaikki osakokeet). Lähde: oph.fi testipäivät (tarkistettu 3.10.2026).
+   "registration" = ilmoittautumisen viimeinen päivä. Osittaiset testipäivät (vain osa osakokeista) on jätetty pois.
+   Lisää uudet päivät heti, kun OPH julkaisee ne (syksy 2027 julkaistaan yleensä alkuvuodesta). */
 const YKI_SCHEDULE = [
-  { test: "2026-04-11", registration: "2026-03-26" },
   { test: "2026-08-29", registration: "2026-08-13" },
-  { test: "2026-11-14", registration: "2026-10-29" },
+  { test: "2026-10-02", registration: "2026-09-16" },
+  { test: "2026-11-07", registration: "2026-10-22" },
+  { test: "2027-01-16", registration: "2027-01-07" },   /* digitaalinen YKI alkaa 2027 */
+  { test: "2027-02-13", registration: "2027-01-28" },
+  { test: "2027-04-10", registration: "2027-03-25" },
 ];
 
 /* -------- HELPERS -------- */
